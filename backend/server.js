@@ -13,7 +13,6 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(cors());
 app.use("/api/auth",authroutes)
 
-
 const PORT = process.env.PORT||7070;
 
 app.listen(PORT,() => console.log("Server is Started"));
