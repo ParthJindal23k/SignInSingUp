@@ -53,7 +53,14 @@ router.post("/signin",async(req,res) =>{
 
     const token= jwt.sign({id:foundUser.id,email:foundUser.email},process.env.JWT_SECRET,{expiresIn:'12h'});
     console.log(token);
-    res.status(200).json({ token });
+    res.status(200).json({
+    token,
+    user: {
+      id: foundUser.id,
+      username: foundUser.username,
+      email: foundUser.email,
+    },
+  });
 });
 
 router.get("/profile",verifyToken,(req,res) =>{
