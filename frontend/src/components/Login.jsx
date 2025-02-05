@@ -34,19 +34,25 @@ const Login = () => {
 
 
   return (
-    <div>
-      <h2>Login</h2>
-        <input type="text" placeholder='Email' value={email} onChange={(e) => setemail(e.target.value)}/>
-        <input type="text" placeholder='Password' value={password} onChange={(e) => setpassword(e.target.value)}/>
-        <button onClick={handleSubmit} >Log In</button>
+    <div className='min-h-screen flex items-center justify-center bg-gray-100'>
+      <div className='bg-white p-8 rounded-lg shadow-lg w-96'>
 
-        <p>
+      <h2 className='text-2xl font-bold text-center text-amber-600'>Login</h2>
+      <form className='mt-4 space-y-4'>
+
+        <input type="text" placeholder='Email' value={email} onChange={(e) => setemail(e.target.value)}  className='w-full px-4  py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400'/>
+        <input type="password" placeholder='Password' value={password} onChange={(e) => setpassword(e.target.value)}  className='w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400'  />
+        <button onClick={handleSubmit} className='w-full bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 cursor-pointer' >Log In</button>
+      </form>
+
+        <p className='mt-4 text-center text-sm text-gray-600'>
             Don't have an account?
-            <span style={{cursor:'pointer'}} onClick={() => Navi("/register")}>
+            <span className='text-amber-600 cursor-pointer hover:underline' onClick={() => Navi("/register")}>
                 Register here
             </span>
             </p>
 
+      </div>
     </div>
   )
 }

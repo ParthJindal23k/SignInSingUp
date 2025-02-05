@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "cors": "^2.8.5",
-    "firebase": "^11.2.0"
+    "firebase": "^11.2.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.3"
   }
 }

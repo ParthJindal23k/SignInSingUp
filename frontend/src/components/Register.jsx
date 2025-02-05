@@ -39,21 +39,27 @@ const Register = () => {
     }
 
   return (
-    <div>
-      <h2>Register</h2>
-        <input type="text" placeholder='Username' value= {username} onChange={(e) => setusername(e.target.value)  } />
-        <input type="text" placeholder='Email' value= {email} onChange={(e) => setemail(e.target.value)  } />
-        <input type="password" placeholder='Password' value= {password} onChange={(e) => setpassword(e.target.value)  } />
+    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
+      <div className='bg-white p-8  rounded-lg shadow-lg w-96'>
 
-        <button onClick={handleSubmit} type = "submit" >Register</button>
+      <h2 className='text-2xl font-bold text-center text-amber-600'>Register</h2>
+      <form className='mt-4 space-y-4'>
 
-      <p>Already have an account? 
-          <span style={{cursor:'pointer'  }} onClick={() => navi("/login")}  >
+        <input type="text" placeholder='Username' value= {username} onChange={(e) => setusername(e.target.value)  } className='w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400'  />
+        <input type="text" placeholder='Email' value= {email} onChange={(e) => setemail(e.target.value)  }  className='w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400'  />
+        <input type="password" placeholder='Password' value= {password} onChange={(e) => setpassword(e.target.value)   }  className='w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400'   />
+
+        <button onClick={handleSubmit} type = "submit" className='w-full bg-amber-600 text-white  py-2 rounded-lg hover:bg-amber-700 cursor-pointer' >Register</button>
+
+      </form>
+      <p className='mt-4 text-center text-sm text-gray-600'> Already have an account? 
+          <span className='text-amber-600 cursor-pointer hover:underline' onClick={() => navi("/login")}  >
             Login here
           </span>
 
          </p>
 
+      </div>
     </div>
   )
 }
